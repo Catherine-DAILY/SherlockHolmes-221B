@@ -294,8 +294,8 @@ export default function Home({ targetSection }: HomeProps) {
                 </div>
 
                 <h1 className="mt-4 text-4xl md:text-6xl leading-[1.05]">
-                  {(siteSettings?.title ?? "Sherlock Holmes") + "，"}
-                  <span className="block">{siteSettings?.tagline ?? "THE GAME IS ON。"}</span>
+                  {(siteSettings?.title ?? "Sherlock Holmes"}
+                  <span className="block">{siteSettings?.tagline ?? "THE GAME IS ON"}</span>
                 </h1>
                 <p className="mt-4 max-w-xl text-muted-foreground">
                   {siteSettings?.description ??
