@@ -307,14 +307,14 @@ export default function Home({ targetSection }: HomeProps) {
                     className="rounded-full"
                     onClick={() => document.getElementById("cases")?.scrollIntoView({ behavior: "smooth" })}
                   >
-                    查看案件档案 <ArrowRight className="ml-2 h-4 w-4" />
+                    案件档案 <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                   <Button
                     variant="secondary"
                     className="rounded-full"
                     onClick={() => document.getElementById("journal")?.scrollIntoView({ behavior: "smooth" })}
                   >
-                    阅读日常 <BookOpen className="ml-2 h-4 w-4" />
+                    日常 <BookOpen className="ml-2 h-4 w-4" />
                   </Button>
                   <Button
                     variant="outline"
@@ -322,7 +322,7 @@ export default function Home({ targetSection }: HomeProps) {
                     onClick={() => toast.success("已复制：221B Baker Street（示例）", { description: "实际运营时请替换为你的邮箱/表单链接。" })}
                   >
                     <MapPin className="mr-2 h-4 w-4" />
-                    复制地址
+                    地址
                   </Button>
                 </div>
               </div>
@@ -337,8 +337,8 @@ export default function Home({ targetSection }: HomeProps) {
           <Card className="border-border/70 bg-card/90 backdrop-blur">
             <CardHeader className="sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <CardTitle className="text-xl">本周行动清单</CardTitle>
-                <CardDescription>把“推理”拆成可执行的动作。</CardDescription>
+                <CardTitle className="text-xl">清单</CardTitle>
+                <CardDescription>任何逻辑链条都存在千丝万缕的联系。</CardDescription>
               </div>
               <Badge variant="secondary" className="mt-2 sm:mt-0 rounded-full">
                 Weekly
@@ -346,7 +346,7 @@ export default function Home({ targetSection }: HomeProps) {
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
-                {[{ icon: Search, text: "观察：三处细节，不记录不算" }, { icon: Brain, text: "推断：写下两个‘更可能’" }, { icon: FlaskConical, text: "验证：做一个小实验" }, { icon: Telescope, text: "收尾：删掉一个不必要的习惯" }].map(
+                {[{ icon: Search, text: "观察" }, { icon: Brain, text: "推断" }, { icon: FlaskConical, text: "验证" }, { icon: Telescope, text: "收尾" }].map(
                   (it) => (
                     <div key={it.text} className="flex items-start gap-3">
                       <div className="mt-0.5 h-8 w-8 rounded-lg bg-muted flex items-center justify-center border border-border/60">
@@ -360,9 +360,9 @@ export default function Home({ targetSection }: HomeProps) {
                 )}
               </div>
               <div className="rounded-2xl border border-border/70 bg-muted/30 p-4">
-                <div className="text-sm font-semibold">使用方式</div>
+                <div className="text-sm font-semibold">这是留给你们的清单，节省我的时间。</div>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  把每条动作当作一次小实验：写下观察、给出两种解释、再用证据否定其中一个。
+                  写下你自己的观察、设想你认为的解释、用关键证据否定其中一个，我在训练你的推理。
                 </p>
                 <Separator className="my-3" />
                 <Button
@@ -371,7 +371,7 @@ export default function Home({ targetSection }: HomeProps) {
                   onClick={() => toast.message("已标记完成", { description: "原型演示：此处可接入真实待办/订阅。" })}
                 >
                   <CheckCircle2 className="mr-2 h-4 w-4" />
-                  标记今日完成
+                  今日完成，你可以进行光合作用了。
                 </Button>
               </div>
             </CardContent>
@@ -382,12 +382,12 @@ export default function Home({ targetSection }: HomeProps) {
         <section id="method" className="mx-auto max-w-6xl px-4 py-14 md:py-18">
           <SectionTitle
             kicker="Method"
-            title="三步法：观察 → 推断 → 排除"
-            desc="参考官方站点的骨架，但换成更‘可训练’的版本：每一步给你一个可执行动作。"
+            title="观察 → 推断 → 排除"
+            desc="我不是大多数人，不需要模仿我的思考方式，做好你认为该做的事。-SH"
             right={
               <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card px-4 py-2 text-sm">
                 <ClipboardList className="h-4 w-4" />
-                <span className="text-muted-foreground">训练比天赋更稳定</span>
+                <span className="text-muted-foreground">我需要案子。</span>
               </div>
             }
           />
@@ -395,8 +395,8 @@ export default function Home({ targetSection }: HomeProps) {
           <div className="mt-10 grid lg:grid-cols-12 gap-6">
             <Card className="lg:col-span-7 overflow-hidden">
               <CardHeader>
-                <CardTitle className="text-2xl">科学演绎法 · 训练版</CardTitle>
-                <CardDescription>把“我觉得”换成“我有证据”。</CardDescription>
+                <CardTitle className="text-2xl">科学演绎法</CardTitle>
+                <CardDescription>无聊，我了解自己的网站。</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid sm:grid-cols-3 gap-3">
@@ -413,10 +413,10 @@ export default function Home({ targetSection }: HomeProps) {
                       <div className="mt-2 text-lg font-semibold">{t}</div>
                       <p className="mt-2 text-sm text-muted-foreground">
                         {t === "观察"
-                          ? "先记事实：光线、材质、气味、时间、距离。"
+                          ? "光线、材质、气味、时间、距离、委托人重点、Gavin的短信（他没有效率）。"
                           : t === "推断"
-                            ? "把事实连成线：写下两种可能，再找证据击倒其中一个。"
-                            : "排除不可能：如果一条路无法解释全部证据，就让它死。"}
+                            ? "基于事实的推理才有可能成为关键证据。"
+                            : "排除不可能：如果一条路无法解释全部证据，删掉。"}
                       </p>
                     </div>
                   ))}
@@ -424,15 +424,15 @@ export default function Home({ targetSection }: HomeProps) {
 
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="a">
-                    <AccordionTrigger>一个简单练习：一分钟内观察你桌面</AccordionTrigger>
+                    <AccordionTrigger>简单练习：一分钟内观察你的桌面</AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">
-                      写下：3个你能证实的事实、2个你想推断的结论、1个你愿意立刻排除的猜测。然后再看一眼——你会发现第四个细节。
+                      写下3个你能证实的事实、2个你想推断的结论、1个你愿意立刻排除的猜测。然后再看一眼——你会发现第四个细节。
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="b">
                     <AccordionTrigger>为什么要“先观察”？</AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">
-                      因为大脑喜欢补全。补全是偷懒，也是误判的起点。证据越早写下，越不容易被后续故事污染。
+                      普通人的大脑里只会记毫无意义的事，这是误判。
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -445,14 +445,14 @@ export default function Home({ targetSection }: HomeProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/10" />
               </div>
               <CardHeader className="relative">
-                <CardTitle className="text-2xl">证据板不是装饰</CardTitle>
-                <CardDescription>它是一种思考姿势。</CardDescription>
+                <CardTitle className="text-2xl">证据板</CardTitle>
+                <CardDescription>我需要思考。</CardDescription>
               </CardHeader>
               <CardContent className="relative">
                 <div className="rounded-2xl border border-border/70 bg-background/70 p-4">
                   <div className="text-sm font-medium">今日关键词</div>
                   <div className="mt-2 flex flex-wrap gap-2">
-                    {["微量残留", "行为诱导", "时间线", "不在场证明", "环境微差"].map((t) => (
+                    {["微量残留", "行为诱导", "时间线", "不在场证明", "可分析环境"].map((t) => (
                       <Badge key={t} variant="secondary" className="rounded-full">
                         {t}
                       </Badge>
@@ -463,7 +463,7 @@ export default function Home({ targetSection }: HomeProps) {
                     variant="outline"
                     onClick={() => toast.message("已保存", { description: "原型演示：此处可写入数据库/Notion/表格。" })}
                   >
-                    保存到我的线索本
+                    线索记事本
                   </Button>
                 </div>
               </CardContent>
@@ -476,7 +476,7 @@ export default function Home({ targetSection }: HomeProps) {
           <SectionTitle
             kicker="Case Files"
             title="案件档案"
-            desc="案例、进行中调查与归档记录。每一份都按“背景-观察-推断-结论”写清楚。"
+            desc="案件请咨询约翰华生。"
             right={
               <div className="flex items-center gap-2">
                 <Button variant="secondary" onClick={() => toast.info("原型演示", { description: "可接入搜索与标签筛选。" })}>
@@ -594,14 +594,14 @@ export default function Home({ targetSection }: HomeProps) {
         <section id="journal" className="mx-auto max-w-6xl px-4 py-14 md:py-18">
           <SectionTitle
             kicker="Journal"
-            title="生活化日常（但仍然可推理）"
-            desc="更像你的截图里那种“把日常当作采样”的气质：花、厨房、草莓、路线。"
+            title="日常"
+            desc="我没兴趣研究任何纪念日，你们的兴趣点大概率只会跳转到这里，我知道你们会做什么。"
           />
 
           <Tabs defaultValue="grid" className="mt-10">
             <TabsList className="bg-muted/50">
-              <TabsTrigger value="grid">瀑布流</TabsTrigger>
-              <TabsTrigger value="notes">短札</TabsTrigger>
+              <TabsTrigger value="grid">自拍照</TabsTrigger>
+              <TabsTrigger value="notes">为什么要留言版</TabsTrigger>
             </TabsList>
 
             <TabsContent value="grid" className="mt-6">
@@ -660,7 +660,7 @@ export default function Home({ targetSection }: HomeProps) {
           <SectionTitle
             kicker="Weekly Puzzle"
             title="本周暗号：移位试验"
-            desc="致敬官方站点的“隐藏讯息”，但做成可互动的小练习：用凯撒移位先热身。"
+            desc="密码有很多种运行方式。"
           />
 
           <div className="mt-10 grid lg:grid-cols-12 gap-6 items-start">
@@ -722,8 +722,8 @@ export default function Home({ targetSection }: HomeProps) {
 
             <Card className="lg:col-span-5">
               <CardHeader>
-                <CardTitle className="text-2xl">小提示</CardTitle>
-                <CardDescription>让暗号更像“案件”，而不是游戏。</CardDescription>
+                <CardTitle className="text-2xl">提示</CardTitle>
+                <CardDescription>让暗号更像游戏。</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-sm text-muted-foreground">
                 <div className="flex gap-3">
@@ -732,7 +732,7 @@ export default function Home({ targetSection }: HomeProps) {
                   </div>
                   <div>
                     <div className="font-medium text-foreground">先猜“载体”</div>
-                    <div>文本、图片、声音、地点？载体决定你该用什么工具。</div>
+                    <div>文本、图片、声音、地点，载体决定你该用什么工具。</div>
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -740,8 +740,8 @@ export default function Home({ targetSection }: HomeProps) {
                     <Fingerprint className="h-4 w-4" />
                   </div>
                   <div>
-                    <div className="font-medium text-foreground">找重复模式</div>
-                    <div>重复就是线索：频率、间隔、对称、边缘。</div>
+                    <div className="font-medium text-foreground">重复模式</div>
+                    <div>重复就是线索-频率、间隔、对称、边缘。</div>
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -749,7 +749,7 @@ export default function Home({ targetSection }: HomeProps) {
                     <Search className="h-4 w-4" />
                   </div>
                   <div>
-                    <div className="font-medium text-foreground">把“猜测”写下来</div>
+                    <div className="font-medium text-foreground">我从不猜测</div>
                     <div>写下来才有资格被验证或被否决。</div>
                   </div>
                 </div>
@@ -757,9 +757,9 @@ export default function Home({ targetSection }: HomeProps) {
                 <Separator />
 
                 <div className="rounded-2xl border border-border/70 bg-card p-4">
-                  <div className="text-sm font-semibold text-foreground">匿名留言（示例）</div>
+                  <div className="text-sm font-semibold text-foreground">匿名留言</div>
                   <p className="mt-2">“Also, where is it the pigs live?”</p>
-                  <p className="mt-2 text-xs">注：原句来自公开页面的剧情式提示，这里仅作结构灵感参考。</p>
+                  <p className="mt-2 text-xs"></p>
                 </div>
               </CardContent>
             </Card>
@@ -770,7 +770,7 @@ export default function Home({ targetSection }: HomeProps) {
         <section id="contact" className="mx-auto max-w-6xl px-4 py-14 md:py-18">
           <SectionTitle
             kicker="Contact"
-            title="提交委托（有趣的才回）"
+            title="提交委托（具体联系约翰华生）"
             desc="这是可运营的入口：你可以把它接到邮箱、表单服务或Notion。原型里先用前端提示代替。"
           />
 
@@ -778,7 +778,7 @@ export default function Home({ targetSection }: HomeProps) {
             <Card className="lg:col-span-7">
               <CardHeader>
                 <CardTitle className="text-2xl">委托表单</CardTitle>
-                <CardDescription>把你的问题写得像证据：时间、地点、你确定的事实。</CardDescription>
+                <CardDescription>不接受任何娱乐性提问，我需要有意义的案子，而不是问我吃什么，你的问题包括证据：时间、地点、确定的事实。</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-3">
