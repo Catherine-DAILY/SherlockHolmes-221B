@@ -255,7 +255,7 @@ export default function Home({ targetSection }: HomeProps) {
             <Button
               variant="outline"
               className="hidden sm:inline-flex"
-              onClick={() => toast.message("提示", { description: "这是前端原型：你可以把表单接到任意邮件/表单服务来运营。" })}
+              onClick={() => toast.message("提示", { description: "网站由SH皮下一人制作完成，和现实人物无关，和现实演员无关，欢迎您的到来。" })}
             >
               <Sparkles className="mr-2 h-4 w-4" />
               运营说明
@@ -290,12 +290,12 @@ export default function Home({ targetSection }: HomeProps) {
               <div className="md:col-span-8">
                 <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-1 text-xs">
                   <Fingerprint className="h-3.5 w-3.5" />
-                  <span className="text-muted-foreground">221B · 仅限有趣案件</span>
+                  <span className="text-muted-foreground">有趣</span>
                 </div>
 
                 <h1 className="mt-4 text-4xl md:text-6xl leading-[1.05]">
                   {(siteSettings?.title ?? "Sherlock Holmes") + "，"}
-                  <span className="block">{siteSettings?.tagline ?? "把世界拆开再拼回去。"}</span>
+                  <span className="block">{siteSettings?.tagline ?? "THE GAME IS ON。"}</span>
                 </h1>
                 <p className="mt-4 max-w-xl text-muted-foreground">
                   {siteSettings?.description ??
@@ -362,7 +362,7 @@ export default function Home({ targetSection }: HomeProps) {
               <div className="rounded-2xl border border-border/70 bg-muted/30 p-4">
                 <div className="text-sm font-semibold">这是留给你们的清单，节省我的时间。</div>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  写下你自己的观察、设想你认为的解释、用关键证据否定其中一个，我在训练你的推理。
+                  写下你自己的观察、设想你认为的解释、用关键证据否定其中一个、我在训练你的推理。
                 </p>
                 <Separator className="my-3" />
                 <Button
