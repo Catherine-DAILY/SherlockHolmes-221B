@@ -299,7 +299,7 @@ export default function Home({ targetSection }: HomeProps) {
                 </h1>
                 <p className="mt-4 max-w-xl text-muted-foreground">
                   {siteSettings?.description ??
-                    "这是一个可运营的个人主页原型：既保留案件档案与分析，也允许生活化日常“插队”。你会看到证据板、暗号练习，以及一小块不那么严肃的日常记录。"}
+                    "名字是夏洛克福尔摩斯，世界上唯一的咨询侦探，仅此一家。"}
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
